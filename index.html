@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mascota Interactiva</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #ff6f61;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+        .mascota {
+            width: 150px;
+            transition: transform 0.2s;
+            margin-top: 20px;
+        }
+        .mascota:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .mensaje {
+            font-size: 1.4rem;
+            margin-top: 15px;
+            color: #ff6f61;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Bienvenido a la página de la mascota interactiva!</h1>
+    <p>Esta página es un pequeño rincón donde podrás relajarte y jugar con nuestra simpática mascota.</p>
+    <p>Haz clic en la mascota para ver cómo reacciona. ¡A veces es un poco juguetona!</p>
+    <img src="https://via.placeholder.com/150" class="mascota" id="mascota" alt="Mascota linda">
+    <div class="mensaje" id="mensaje">¡Hola, humano! Soy tu amigable compañero.</div>
+    <footer>Creado con 💖 para alegrarte el día.</footer>
+    <script>
+        const mascota = document.getElementById("mascota");
+        const mensaje = document.getElementById("mensaje");
+        const mensajes = [
+            "¡Miau! ¿Necesitas algo?",
+            "¡Guau! ¡Estoy aquí!",
+            "¡Purrr! ¿Me acaricias?",
+            "¡Hola! ¿Vamos a jugar?"
+        ];
+        mascota.addEventListener("click", () => {
+            const mensajeAleatorio = mensajes[Math.floor(Math.random() * mensajes.length)];
+            mensaje.textContent = mensajeAleatorio;
+            setTimeout(() => {
+                mensaje.textContent = "¡Hola, humano! Soy tu amigable compañero.";
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
